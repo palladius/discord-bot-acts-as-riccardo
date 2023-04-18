@@ -6,11 +6,17 @@
 ################################################
 export APPLICATION_ID='1010101010101010101'
 export PUBLIC_KEY='abcdefghijklmnopqrstuvz1234567890abcdefghijklmnopqrstuvz12345678'
+
+
+# under Bot
+export BOT_TOKEN="12345678901230912384049463.G12345.i1235426354523176455472654723654762344"
+# https://discord.com/developers/applications/1097532911022002216/oauth2/url-generator
+
 ################################################
-# OAuth
+# OAuth (I dont think its used for the moment)
 ################################################
-export OAUTH2_client="1010101010101010101"
-export CLIENT_SECRET="1234567890abcdefghijklmnopqrstuv"
+#export OAUTH2_CLIENT="1010101010101010101"
+#export CLIENT_SECRET="1234567890abcdefghijklmnopqrstuv"
 
 ######################################
 # Discord Server
