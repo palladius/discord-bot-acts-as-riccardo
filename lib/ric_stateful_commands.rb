@@ -1,6 +1,5 @@
 $commands = {}
-# TODO persist to file :) 
-# or maybe to firebase :)
+# or maybe persist to firebase.. :)
 
 $persist_to_file = 'commands-marshall.yaml'
 

@@ -23,8 +23,8 @@ end
   end
   
   Bot.message(with_text: 'mj_urls') do |event|
-    bot_event_respond event, '🤖 Riccardo pvt URL: https://www.midjourney.com/app/users/6f8c6312-ed0d-479f-b236-efbbffbb9823/'
-    bot_event_respond event, "Riccardo pvt URL: https://www.midjourney.com/app/users/6f8c6312-ed0d-479f-b236-efbbffbb9823/"
+    bot_event_respond event, '🤖 Riccardo pvt URL: https://www.midjourney.com/app/users/6f8c6312..'
+    bot_event_respond event, "Riccardo pvt URL: https://www.midjourney.com/app/users/6f8c6312.."
     getPeopleWebsites.each do |person, url| 
         #url = :boh
         bot_event_respond event, "🤖 Private MJ page of **#{person}** 🌍 #{url}"
