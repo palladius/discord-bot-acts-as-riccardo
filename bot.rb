@@ -2,13 +2,12 @@
 require 'discordrb'
 require 'socket'
 
-hostname =  Socket.gethostname 
-today = Time.now.to_s.split(' ').first
+#hostname =  Socket.gethostname 
+
 
 TOKEN = ENV['TOKEN'] or 'NonDatur'
 ChannelID = ENV['SERVER_ID']
 
-VERSION = "1.3_#{today}@#{hostname} (🤖)" # @ Hostname
 
 Bot = Discordrb::Commands::CommandBot.new(
   token: ENV['TOKEN'],

@@ -4,7 +4,7 @@
 #    Bot.message(with_text: /hello|help/ ) do |event|
 Bot.message(content: 'hello' ) do |event|
     event.respond '🤖 🇮🇹 Sorry (RegEx) me no speak English me only parla Italiano! 🇮🇹 Try these: `ciao` and `/aiuto`'
-    event.respond "🤖 RicBot v#{VERSION}"
+    event.respond "🤖 RicBot v#{VERSION} - code: #{$bot_code_url}"
 end
 
 
