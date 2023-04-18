@@ -1,4 +1,4 @@
- <img src='https://github.com/palladius/discord-bot-acts-as-riccardo/raw/main/images/palladius_Greek_goddess_of_discord_with_a_funny_robot_in_front_3ec96176-6ad7-4b7f-8722-23447655a1f3.png' width='50%' align='right' />
+ <img src='https://github.com/palladius/discord-bot-acts-as-riccardo/raw/main/images/palladius_Greek_goddess_of_discord_with_a_funny_robot_in_front_bd6ef57b-7980-4ac2-910c-86ce1cf90c23.png' width='50%' align='right' />
 
 This repo is my first Discord Bot ever, and I had plenty of fun and FAST!
 
