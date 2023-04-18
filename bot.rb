@@ -6,7 +6,7 @@ hostname =  Socket.gethostname
 today = Time.now.to_s.split(' ').first
 
 TOKEN = ENV['TOKEN'] or 'NonDatur'
-ChannelID = ENV['SERVER_ID'] # 613425648685547541
+ChannelID = ENV['SERVER_ID']
 
 VERSION = "1.3_#{today}@#{hostname} (🤖)" # @ Hostname
 
