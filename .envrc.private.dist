@@ -10,7 +10,7 @@ export PUBLIC_KEY='abcdefghijklmnopqrstuvz1234567890abcdefghijklmnopqrstuvz12345
 # OAuth
 ################################################
 export OAUTH2_client="1010101010101010101"
-export CLIENT_SECRET="2134567890abcdefghijklmnopqrstuv"
+export CLIENT_SECRET="1234567890abcdefghijklmnopqrstuv"
 
 ######################################
 # Discord Server
