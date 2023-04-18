@@ -1,0 +1,24 @@
+#!/bin/bash
+
+
+################################################
+# Application id + public key
+################################################
+export APPLICATION_ID='1010101010101010101'
+export PUBLIC_KEY='abcdefghijklmnopqrstuvz1234567890abcdefghijklmnopqrstuvz12345678'
+################################################
+# OAuth
+################################################
+export OAUTH2_client="1010101010101010101"
+export CLIENT_SECRET="2134567890abcdefghijklmnopqrstuv"
+
+######################################
+# Discord Server
+export SERVER_ID='1111111111111111111'
+export SERVER_NAME="Your description of this server"
+
+
+export PEOPLE_PERSONAL_WEBSITES="ArrayOf:
+FooBar  ::: https://www.midjourney.com/app/users/abcdef12-1234-5678-ed0d-123456789abc/
+BazSemp ::: https://www.midjourney.com/app/users/abcdef12-1234-5678-4177-123456789abc/
+"
