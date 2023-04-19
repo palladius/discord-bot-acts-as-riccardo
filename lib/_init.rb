@@ -5,6 +5,9 @@ $hostname = $long_hostname.split('.').first
 $bot_code_url = ENV.fetch 'GITHUB_REPO', 'https://github.com/palladius/discord-bot-acts-as-riccardo'
 $today = Time.now.to_s.split(' ').first
 
+MJ_PREQUEL = '/imagine prompt:'
+MJ_SEQUEL = ', in the style of Pixar, 4-colors'
+
 version_from_file = File.read('./VERSION').chomp
 VERSION = "#{version_from_file}_#{$today}@#{$hostname} (🤖)" # @ Hostname
 

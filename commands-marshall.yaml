@@ -1,22 +1,23 @@
 ---
 - :when: '2023-04-18 14:21:07 +0200'
-  :command: a Database with a cute feather on top (from /memento)
-  :hostname: derek
-  :marshall_version: '1.1'
-- :when: '2023-04-18 14:22:00 +0200'
-  :command: mori (from /memento)
+  :command: a Database with a cute feather on top
   :hostname: derek
   :marshall_version: '1.1'
 - :when: '2023-04-19 09:55:37 +0200'
-  :command: a puffin made out of red blue green yellow Lego (from /memento)
+  :command: a puffin made out of red blue green yellow Lego
   :hostname: derek.zrh.corp.google.com
   :marshall_version: '1.1'
 - :when: '2023-04-19 09:56:37 +0200'
-  :command: Gates to hell by Rodin, cartoon (from /memento)
+  :command: Gates to hell by Rodin, cartoon
   :hostname: derek.zrh.corp.google.com
   :marshall_version: '1.1'
 - :when: '2023-04-19 13:41:33 +0200'
-  :command: "/imagine a puffin on its way to Hell accompanied by Virgil, meets Charon
+  :command: "a puffin on its way to Hell accompanied by Virgil, meets Charon
     in Styx"
+  :hostname: derek.zrh.corp.google.com
+  :marshall_version: '1.1'
+- :when: '2023-04-19 17:10:04 +0200'
+  :command: "epic scifi art, xenomorphic puffin, style of H. R. giger, Dan
+    hillier, coal, hematite, oilslick::4 puffin tax::0.5 --ar 2:3"
   :hostname: derek.zrh.corp.google.com
   :marshall_version: '1.1'

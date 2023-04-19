@@ -58,7 +58,7 @@ end
 def print_commands_as_respond_to(event)
   cmds = get_commands() 
   cmds.each do |cmd| 
-    event.respond "🐦 #{cmd}"
+    event.respond "* `#{MJ_PREQUEL}#{cmd}#{MJ_SEQUEL}`"
   end
 end
 

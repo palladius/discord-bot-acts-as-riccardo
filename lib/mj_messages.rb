@@ -2,8 +2,12 @@
 
 EnvPeopleWebsites = ENV.fetch('PEOPLE_PERSONAL_WEBSITES', '')
 
+MJ_PREQUEL = '/imagine prompt:'
+MJ_SEQUEL = ', in the style of Pixar, 4-colors'
+
+
 def bot_event_respond(event, msg) 
-    event.respond "🤖 #{msg}"
+    event.respond "🤖RicBot v#{VERSION}🤖 #{msg}"
 end
 
 def getPeopleWebsites()
@@ -23,11 +27,9 @@ end
   end
   
   Bot.message(with_text: 'mj_urls') do |event|
-    bot_event_respond event, '🤖 Riccardo pvt URL: https://www.midjourney.com/app/users/6f8c6312..'
-    bot_event_respond event, "Riccardo pvt URL: https://www.midjourney.com/app/users/6f8c6312.."
     getPeopleWebsites.each do |person, url| 
         #url = :boh
-        bot_event_respond event, "🤖 Private MJ page of **#{person}** 🌍 #{url}"
+        bot_event_respond event, "Private MJ page of **#{person}** 🌍 #{url}"
     end
   end
 
