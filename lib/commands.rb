@@ -21,10 +21,16 @@ end
 
   
 Bot.command(:memento) do |event, *args|
-  event.respond '🤖 Riccardo, I understand you want to remember a MidJourney command you just issued for the future '
-  add_command(args.join(' ') + " (from /memento)") #  "ciao da me -TODO parse the STDIN (code in random)"
+  input_message = args.join(' ').to_s
+  bot_event_respond event, 'I understand you want to remember a MidJourney command you just issued for the future.'
+  if (input_message == '')
+    bot_event_respond(event, 'No string passed. Good man. Showing history only then!') # todo remove this line once tested
+  else
+    add_command("#{input_message}") unless input_message == ''
+  end
   event.respond "Commands Ive memorized so far since last execution (stateless - poor program):"
   print_commands_as_respond_to(event)
+  return nil # otherwise i got duplicated stuff
 end
 
 Bot.command :long do |event|
