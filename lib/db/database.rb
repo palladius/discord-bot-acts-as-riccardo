@@ -4,7 +4,8 @@
 module DiscordDB
 
     require 'sequel'
-    TableName = 'discord_messages_test'
+    #TableName = 'discord_messages_test'
+    TableName = 'discord_messages'
     $db ||= nil
 
     def db_puts(str)
@@ -17,14 +18,14 @@ module DiscordDB
     end
 
     def db_write_discord_messages(hash)
-        items = $db[:discord_messages_test]
-        hash[:internal_description] = 'test 2 (DB with hash - will it work?)'
+        items = $db[TableName.to_sym]
+        hash[:internal_description] ||= 'test 2 (db_write_discord_messages())' # it does :)
         items.insert(hash)
     end
 
     def db_get_discord_messages()
         42
-        items = $db[:discord_messages_test]
+        items = $db[TableName.to_sym]
         sql = "SELECT command FROM #{TableName} ; "
         ret = []
         $db.fetch(sql) do |row|
@@ -44,7 +45,7 @@ module DiscordDB
             puts "$db found: #{$db}"
 
             #puts mysql2("SELECT * FROM #{TableName}")
-            items = $db[:discord_messages_test]
+            items = $db[TableName.to_sym]
             #items.insert(hostname: $long_hostname) # , price: rand * 100)
 
             db_puts $db.class.superclass

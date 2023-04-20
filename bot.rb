@@ -24,7 +24,8 @@ bot_verbose_initialization()
 include DiscordDB
 db_init()
 
-#add_command('prova db bifidatest removeme when done su Mac')
+#add_command('Migration is now done on Mac on MYSQL woohoo!')
 #puts get_commands()
 #exit 43
+
 Bot.run()

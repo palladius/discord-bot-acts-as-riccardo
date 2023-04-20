@@ -2,7 +2,7 @@ $commands = {}
 # or maybe persist to firebase.. :)
 
 $persist_to_file = 'commands-marshall.yaml'
-$marshall_version = '1.2'
+$marshall_version = '1.3'
 
 =begin
 
@@ -44,6 +44,8 @@ def add_command(my_command)
     command: my_command,
     hostname: $long_hostname,
     marshall_version: $marshall_version, # update if yuoui change schema...
+    internal_description: 'Created by add_command() and delivered either to MySQL or to file depending on ENV provided by user',
+    username: ENV['USER'],
   }
   #puts 'db: ', $db
 
