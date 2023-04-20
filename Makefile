@@ -8,7 +8,7 @@ magic: .envrc.private
 
 dbtest:
 	bundle exec ruby  db_test.rb
-	sh t.sh
+	#sh t.sh
 
 
 .envrc.private:
