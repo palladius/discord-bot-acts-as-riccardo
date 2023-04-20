@@ -2,7 +2,7 @@
 require 'discordrb'
 require 'socket'
 
-#hostname =  Socket.gethostname 
+#hostname =  Socket.gethostname
 
 
 TOKEN = ENV['TOKEN'] or 'NonDatur'
@@ -15,10 +15,16 @@ Bot = Discordrb::Commands::CommandBot.new(
   prefix: '/'
 )
 
-Dir['./lib/*.rb'].each do |f|
-  require f 
+Dir['./lib/*.rb', './lib/db/*.rb'].each do |f|
+  require f
 end
 
 bot_verbose_initialization()
 
+include DiscordDB
+db_init()
+
+#add_command('prova db bifidatest removeme when done su Mac')
+#puts get_commands()
+#exit 43
 Bot.run()

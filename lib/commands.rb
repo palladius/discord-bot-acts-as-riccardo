@@ -24,7 +24,7 @@ Bot.command(:memento) do |event, *args|
   input_message = args.join(' ').to_s
   bot_event_respond event, 'I understand you want to remember a MidJourney command you just issued for the future.'
   if (input_message == '')
-    #bot_event_respond(event, '👎 **No string passed**. Good man. Showing history only (read only)') # todo remove this line once tested
+    bot_event_respond(event, '👎 **No string passed**. Good man. Showing history only (read only)') # todo remove this line once tested
   else
     add_command("#{input_message}") unless input_message == ''
   end

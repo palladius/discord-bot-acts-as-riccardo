@@ -31,8 +31,140 @@
   :hostname: derek.zrh.corp.google.com
   :marshall_version: '1.1'
 - :when: '2023-04-20 08:21:00 +0200'
-  :command: A logo combining letter "A" and "J" with golden
-    color with black background. The design is clean and look very professional v4
-    making the A more prominent (queue full)
+  :command: A logo combining letter "A" and "J" with golden color with black background.
+    The design is clean and look very professional v4 making the A more prominent
+    (queue full)
   :hostname: derek.zrh.corp.google.com
   :marshall_version: '1.1'
+- :when: '2023-04-20 21:52:20 +0200'
+  :command: ciao da me
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:02:11 +0200'
+  :command: ciao prova mysql
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:04:03 +0200'
+  :command: prova db test
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:04:09 +0200'
+  :command: prova db test
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:04:23 +0200'
+  :command: prova db test removeme when done
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:05:11 +0200'
+  :command: prova db test removeme when done
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:05:15 +0200'
+  :command: prova db test removeme when done
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:05:18 +0200'
+  :command: prova db test removeme when done
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:05:20 +0200'
+  :command: prova db test removeme when done
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:05:23 +0200'
+  :command: prova db test removeme when done
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:05:26 +0200'
+  :command: prova db test removeme when done
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:05:28 +0200'
+  :command: prova db test removeme when done
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:05:31 +0200'
+  :command: prova db test removeme when done
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:05:33 +0200'
+  :command: prova db test removeme when done
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:05:36 +0200'
+  :command: prova db test removeme when done
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:05:38 +0200'
+  :command: prova db test removeme when done
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:06:36 +0200'
+  :command: prova db test removeme when done
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:06:39 +0200'
+  :command: prova db test removeme when done
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:06:41 +0200'
+  :command: prova db test removeme when done
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:06:44 +0200'
+  :command: prova db test removeme when done
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:06:47 +0200'
+  :command: prova db test removeme when done su Mac
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:06:49 +0200'
+  :command: prova db test removeme when done su Mac
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:06:52 +0200'
+  :command: prova db test removeme when done su Mac
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:06:54 +0200'
+  :command: prova db test removeme when done su Mac
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:06:57 +0200'
+  :command: prova db test removeme when done su Mac
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:07:00 +0200'
+  :command: prova db test removeme when done su Mac
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:07:03 +0200'
+  :command: prova db test removeme when done su Mac
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:07:05 +0200'
+  :command: prova db test removeme when done su Mac
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:07:08 +0200'
+  :command: prova db test removeme when done su Mac
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:07:11 +0200'
+  :command: prova db test removeme when done su Mac
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:07:14 +0200'
+  :command: prova db test removeme when done su Mac
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:07:28 +0200'
+  :command: prova db test removeme when done su Mac
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.1'
+- :when: '2023-04-20 22:08:43 +0200'
+  :command: prova db test removeme when done su Mac
+  :hostname: ricc-macbookpro3.roam.internal
+  :marshall_version: '1.2'
