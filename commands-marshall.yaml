@@ -20,10 +20,6 @@
     coal, hematite, oilslick::4 puffin tax::0.5 --ar 2:3
   :hostname: derek.zrh.corp.google.com
   :marshall_version: '1.1'
-- :when: '2023-04-19 20:47:19 +0200'
-  :command: kill kill kill cmd
-  :hostname: derek.zrh.corp.google.com
-  :marshall_version: '1.1'
 - :when: '2023-04-20 06:38:56 +0200'
   :command: "**Fantasy digital painting shows four characters in a fantasy setting:
     a female wizard in long robes with a staff, a berserker knight in heavy armor

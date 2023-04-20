@@ -6,9 +6,7 @@ MJ_PREQUEL = '/imagine prompt:'
 MJ_SEQUEL = ', in the style of Pixar, 4-colors'
 
 
-def bot_event_respond(event, msg) 
-    event.respond "🤖RicBot v#{VERSION}🤖 #{msg}"
-end
+
 
 def getPeopleWebsites()
     peopleWebsites = EnvPeopleWebsites.split("\n")

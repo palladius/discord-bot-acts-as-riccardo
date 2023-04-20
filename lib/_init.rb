@@ -15,7 +15,9 @@ VERSION = "#{version_from_file}_#{$today}@#{$hostname} (🤖)" # @ Hostname
 def bot_puts(str)
     puts "🤖RicBot@#{$hostname}🤖 #{str}"
 end
-
+def bot_event_respond(event, msg) 
+    event.respond "🤖RicBot v#{VERSION.split('_')[0]} 🇮🇹 #{msg}"
+end
 
 bot_puts "#####################################################################"
 bot_puts "== Welcome to RiccBot v#{VERSION} =="
