@@ -12,12 +12,31 @@
   :hostname: derek.zrh.corp.google.com
   :marshall_version: '1.1'
 - :when: '2023-04-19 13:41:33 +0200'
-  :command: "a puffin on its way to Hell accompanied by Virgil, meets Charon
-    in Styx"
+  :command: a puffin on its way to Hell accompanied by Virgil, meets Charon in Styx
   :hostname: derek.zrh.corp.google.com
   :marshall_version: '1.1'
 - :when: '2023-04-19 17:10:04 +0200'
-  :command: "epic scifi art, xenomorphic puffin, style of H. R. giger, Dan
-    hillier, coal, hematite, oilslick::4 puffin tax::0.5 --ar 2:3"
+  :command: epic scifi art, xenomorphic puffin, style of H. R. giger, Dan hillier,
+    coal, hematite, oilslick::4 puffin tax::0.5 --ar 2:3
+  :hostname: derek.zrh.corp.google.com
+  :marshall_version: '1.1'
+- :when: '2023-04-19 20:47:19 +0200'
+  :command: kill kill kill cmd
+  :hostname: derek.zrh.corp.google.com
+  :marshall_version: '1.1'
+- :when: '2023-04-20 06:38:56 +0200'
+  :command: "**Fantasy digital painting shows four characters in a fantasy setting:
+    a female wizard in long robes with a staff, a berserker knight in heavy armor
+    with a large weapon, a tough man who is muscular and rugged, and a rogue in dark
+    clothing with a sneaky appearance. Each character has a unique pose that conveys
+    their personality and abilities. The overall effect is one of danger and excitement,
+    promising an action-packed fantasy adventure.** - Variations by <@676539297259716609>
+    (fast)"
+  :hostname: derek.zrh.corp.google.com
+  :marshall_version: '1.1'
+- :when: '2023-04-20 08:21:00 +0200'
+  :command: A logo combining letter "A" and "J" with golden
+    color with black background. The design is clean and look very professional v4
+    making the A more prominent (queue full)
   :hostname: derek.zrh.corp.google.com
   :marshall_version: '1.1'

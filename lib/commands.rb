@@ -75,6 +75,10 @@ Bot.command :user do |event|
   # To prevent the return value to be sent to the channel, you can just return `nil`.
   event.user.name
 end
+Bot.command :muori do |event|
+  bot_event_respond event, 'I see you ask me to do *harakiri*. I will. See you soon.'
+  exit(42)
+end
 
 
 end 
