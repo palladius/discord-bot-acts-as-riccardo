@@ -19,5 +19,6 @@ Dir['./lib/*.rb'].each do |f|
   require f 
 end
 
-#Bot.run(true)
+bot_verbose_initialization()
+
 Bot.run()

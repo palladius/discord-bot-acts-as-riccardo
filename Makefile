@@ -5,3 +5,6 @@
 
 magic:
 	./magic.sh
+
+dbtest:
+	bundle exec ruby  db_test.rb 

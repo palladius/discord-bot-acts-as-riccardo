@@ -28,3 +28,6 @@ export PEOPLE_PERSONAL_WEBSITES="ArrayOf:
 FooBar  ::: https://www.midjourney.com/app/users/abcdef12-1234-5678-ed0d-123456789abc/
 BazSemp ::: https://www.midjourney.com/app/users/abcdef12-1234-5678-4177-123456789abc/
 "
+
+# for your /memento command to write to DB :)
+export ENV_DB_URL='mysql2://your-username:your-password@localhost:3306/your-db-name'
