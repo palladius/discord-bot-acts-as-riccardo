@@ -3,9 +3,6 @@
 EnvPeopleWebsites = ENV.fetch('PEOPLE_PERSONAL_WEBSITES', '')
 
 
-
-
-
 def getPeopleWebsites()
     peopleWebsites = EnvPeopleWebsites.split("\n")
     raise "Malformed variable, should be a multiline starting with 'ArrayOf:' and then have a NAME and URL with triple ::: separator. Instead this is what I see: #{peopleWebsites}" unless peopleWebsites[0] == "ArrayOf:"
@@ -29,6 +26,10 @@ end
     end
   end
 
+  Bot.message(with_text: /^mjt (.*)/) do |event|
+    # too hard to get args here...
+    bot_event_respond event, "Naah... use /mjt instead"
+  end
 
 
-  bot_puts "DEBUG: getPeopleWebsites #{ getPeopleWebsites() }"
+bot_puts "DEBUG: getPeopleWebsites #{ getPeopleWebsites() }"

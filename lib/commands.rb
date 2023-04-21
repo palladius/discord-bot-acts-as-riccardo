@@ -109,6 +109,25 @@ module Ping
     ret.join("\n`[DEB]` ")[0,2000] # max 2k char..
   end
 
+  # record on mysql a template you can then recall :) 
+  Bot.command :mjt do |event, *args|    # too hard to get args here...
+    #bot_event_respond event, "Naah... use /mjt instead"
+    # verify Arguments
+    if args.size == 0 
+      return bot_event_respond( event, '/mjt: Wrong size. TODO(ricc): expose possible keys')
+    end
+    if args.size == 1
+      return bot_event_respond( event, "/mjt: Only one key . TODO(ricc): GET template(id=**#{args[0]}**) ")
+    end
+    # more stuff :) lets write
+    bot_event_respond event, "/mjt: ARGS you gave me: **#{args.join(' ')}**. Lets write it on DB :)"
+    template_name = args.shift # [0]
+    template_description = args.join(' ')
+    bot_event_respond event, "/mjt: WRITING on MYSQL Template: **#{template_name}** -> ''*#{template_description}*''"
+    # TODO mysql write this
+  end
+
+
 
 
 end #/module ping
