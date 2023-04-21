@@ -1,13 +1,15 @@
 
-#Bot = nil 
+#Bot = nil
 
 $long_hostname = Socket.gethostname
 $hostname = $long_hostname.split('.').first
 $bot_code_url = ENV.fetch 'GITHUB_REPO', 'https://github.com/palladius/discord-bot-acts-as-riccardo'
 $today = Time.now.to_s.split(' ').first
 
-MJ_PREQUEL = '/imagine prompt:'
-MJ_SEQUEL = ', in the style of Pixar, 4-colors'
+$mj_PREQUEL = '/imagine prompt:'
+$mj_SEQUEL = ', in the style of Pixar, 4-colors'
+MJ_PREQUEL = '' # '/imagine prompt:'
+MJ_SEQUEL = '' # ', in the style of Pixar, 4-colors'
 
 version_from_file = File.read('./VERSION').chomp
 VERSION = "#{version_from_file}_#{$today}@#{$hostname} (🤖)" # @ Hostname
@@ -17,7 +19,7 @@ def bot_puts(str)
     puts "🤖RicBot@#{$hostname}🤖 #{str}"
 end
 
-def bot_event_respond(event, msg) 
+def bot_event_respond(event, msg)
     event.respond "🤖RicBot v#{VERSION.split('_')[0]} 🇮🇹 #{msg}"
 end
 

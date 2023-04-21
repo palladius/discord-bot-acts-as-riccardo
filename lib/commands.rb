@@ -19,12 +19,12 @@ Bot.command(:random, min_args: 0, max_args: 2, description: 'Generates a random 
   end
 end
 
-  
+
 Bot.command(:memento) do |event, *args|
   input_message = args.join(' ').to_s
   bot_event_respond event, 'I understand you want to remember a MidJourney command you just issued for the future.'
   if (input_message == '')
-    #bot_event_respond(event, '👎 **No string passed**. Good man. Showing history only (read only)') # todo remove this line once tested
+    bot_event_respond(event, '👎 **No string passed**. Good man. Showing history only (read only)') # todo remove this line once tested
   else
     add_command("#{input_message}") unless input_message == ''
   end
@@ -77,8 +77,9 @@ Bot.command :user do |event|
 end
 Bot.command :muori do |event|
   bot_event_respond event, 'I see you ask me to do *harakiri*. I will. See you soon.'
+  bot_puts 'Ive been asked by someone (WHO? Check USER TODO) to die. Arrivederci!'
   exit(42)
 end
 
 
-end 
+end

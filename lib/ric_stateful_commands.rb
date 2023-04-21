@@ -2,9 +2,10 @@ $commands = {}
 # or maybe persist to firebase.. :)
 
 $persist_to_file = 'commands-marshall.yaml'
+$marshall_version = '1.3'
 
 =begin
-    
+
 1. Marshal
 
 # dumping:
@@ -19,7 +20,7 @@ File.write('movies.yml', movies.to_yaml)
 # read back in from file
 from_file = YAML.load_file('movies.yml')
 
-=end 
+=end
 require 'yaml'
 
 def _retrieve_file_to_array()
@@ -31,38 +32,65 @@ end
 
 def write_array_to_file(arr)
     raise "Wrong UnMarshall and UnLily WRITE: this should be an array: insteasd its a  #{arr.class}" unless arr.is_a? Array
-    return File.write($persist_to_file, arr.to_yaml) 
-    
+    return File.write($persist_to_file, arr.to_yaml)
+
 end
 
 
 def add_command(my_command)
-  commands_array = _retrieve_file_to_array()
 
   new_entry = {
     when:  Time.now.to_s,
     command: my_command,
     hostname: $long_hostname,
-    marshall_version: '1.1', # update if yuoui change schema...
+    marshall_version: $marshall_version, # update if yuoui change schema...
+    internal_description: 'Created by add_command() and delivered either to MySQL or to file depending on ENV provided by user',
+    username: ENV['USER'],
   }
+  #puts 'db: ', $db
 
-  commands_array << new_entry
-  write_array_to_file(commands_array)
+  if $db
+    # write to MySQL and similar..
+    bot_puts "DB found: '#{$db}'"
+    # items = $db[:discord_messages_test]
+    # items.insert(
+    #   when:  Time.now.to_s,
+    #   command: my_command,
+    #   hostname: $long_hostname,
+    #   marshall_version: $marshall_version,
+    #   #internal_description: 'test 1',
+    # )
+    # TODO refactor here :)
+    db_write_discord_messages(new_entry)
+  else
+    # write to YAML file..
+    commands_array = _retrieve_file_to_array()
+    bot_puts "DB NOT found: '#{$db}'"
+    commands_array << new_entry
+    write_array_to_file(commands_array)
+  end
+  return
 end
+
 def get_commands()
-  commands = _retrieve_file_to_array.map{|h| h[:command]}
-  pp commands # ["command-v1-${Time.now}"] = blah
-  commands # ["command-v1-${Time.now}"] = blah
+  if $db
+    #puts 'DB found!'
+    db_get_discord_messages()
+  else
+    commands = _retrieve_file_to_array.map{|h| h[:command]}
+    pp commands # ["command-v1-${Time.now}"] = blah
+    commands # ["command-v1-${Time.now}"] = blah
+  end
 end
 
 def print_commands_as_respond_to(event)
-  cmds = get_commands() 
-  cmds.each do |cmd| 
+  cmds = get_commands()
+  cmds.each do |cmd|
     event.respond "* `#{MJ_PREQUEL}#{cmd}#{MJ_SEQUEL}`"
   end
 end
 
-if $DEBUG 
+if $DEBUG
   add_command('DEBUG enabled: Testing the system')
-  pp "DEBUG COMMANDS: #{get_commands()}" 
+  pp "DEBUG COMMANDS: #{get_commands()}"
 end
