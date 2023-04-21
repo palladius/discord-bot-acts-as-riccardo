@@ -2,7 +2,7 @@ $commands = {}
 # or maybe persist to firebase.. :)
 
 $persist_to_file = 'commands-marshall.yaml'
-$marshall_version = '1.3'
+$marshall_version = '1.4'
 
 =begin
 
@@ -46,21 +46,11 @@ def add_command(my_command)
     marshall_version: $marshall_version, # update if yuoui change schema...
     internal_description: 'Created by add_command() and delivered either to MySQL or to file depending on ENV provided by user',
     username: ENV['USER'],
+    topic: ':memento',
   }
-  #puts 'db: ', $db
 
   if $db
-    # write to MySQL and similar..
     bot_puts "DB found: '#{$db}'"
-    # items = $db[:discord_messages_test]
-    # items.insert(
-    #   when:  Time.now.to_s,
-    #   command: my_command,
-    #   hostname: $long_hostname,
-    #   marshall_version: $marshall_version,
-    #   #internal_description: 'test 1',
-    # )
-    # TODO refactor here :)
     db_write_discord_messages(new_entry)
   else
     # write to YAML file..
@@ -74,19 +64,19 @@ end
 
 def get_commands()
   if $db
-    #puts 'DB found!'
-    db_get_discord_messages()
+    db_get_discord_messages(:memento)
   else
     commands = _retrieve_file_to_array.map{|h| h[:command]}
-    pp commands # ["command-v1-${Time.now}"] = blah
-    commands # ["command-v1-${Time.now}"] = blah
+    #pp commands 
+    commands 
   end
 end
 
 def print_commands_as_respond_to(event)
   cmds = get_commands()
-  cmds.each do |cmd|
-    event.respond "* `#{MJ_PREQUEL}#{cmd}#{MJ_SEQUEL}`"
+  cmds.each_with_index do |cmd, ix|
+#    event.respond "* `#{MJ_PREQUEL}#{cmd}#{MJ_SEQUEL}`"
+    event.respond "[#{ix}] #{cmd}"
   end
 end
 
