@@ -3,3 +3,4 @@ t.sh
 .git-privatize
 .echodo_history
 .rake_tasks~
+servers.json

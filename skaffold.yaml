@@ -1,0 +1,12 @@
+apiVersion: skaffold/v4beta2
+kind: Config
+
+manifests:
+  rawYaml:
+    - deploy/*
+
+deploy:
+  cloudrun:
+    projectid: YOUR-GCP-PROJECT
+    #projectid: vulcanina
+    region: europe-west1

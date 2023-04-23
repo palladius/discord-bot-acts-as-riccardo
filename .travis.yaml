@@ -1,0 +1,13 @@
+{
+  "language": "ruby",
+  "rvm": [
+    2.3
+  ],
+  "before_install": [
+    "bundle install",
+#    "gem install openssl",
+#    "gem install uri",
+#    "gem install json",
+    "rackup"
+  ]
+}

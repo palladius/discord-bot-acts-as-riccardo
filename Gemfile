@@ -5,6 +5,9 @@ gem 'discordrb'
 # For MySQL
 gem 'sequel'
 
+# to run via buildpacks: https://docs.cloudfoundry.org/buildpacks/ruby/ruby-tips.html
+gem 'rack'
+
 
 ############################
 # Possible Databases
