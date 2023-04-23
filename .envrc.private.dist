@@ -30,4 +30,4 @@ BazSemp ::: https://www.midjourney.com/app/users/abcdef12-1234-5678-4177-1234567
 "
 
 # for your /memento command to write to DB :)
-export ENV_DB_URL='mysql2://your-username:your-password@localhost:3306/your-db-name'
+export DATABASE_URL='mysql2://your-username:your-password@localhost:3306/your-db-name'

@@ -4,10 +4,13 @@
 module DiscordDB
 
     require 'sequel'
-
+    # consts
+    DEFAULT_DATABASE_URL = 'sqlite3://default.sqlite3'
     TableName = 'discord_messages'
+    # global vars
     $db ||= nil
 
+    # methods
     def db_puts(str)
         puts "🔋RicBot.DB🔋 #{str}"
     end
@@ -27,7 +30,7 @@ module DiscordDB
     def db_get_discord_messages(topic=nil)
         items = $db[TableName.to_sym]
         sql = "SELECT command FROM #{TableName} "
-        sql += " WHERE topic = '#{topic}' " if topic 
+        sql += " WHERE topic = '#{topic}' " if topic
         sql += ';'
         print "SQL: '''#{sql}'''"
         ret = []
@@ -40,7 +43,7 @@ module DiscordDB
 
     def db_init()
 
-        mysql_url = ENV.fetch('ENV_DB_URL', 'sqlite3://default.sqlite3')
+        mysql_url = ENV.fetch('DATABASE_URL', DEFAULT_DATABASE_URL)
 
         puts "$db URL: #{mysql_url}"
         $db ||= Sequel.connect(mysql_url)
