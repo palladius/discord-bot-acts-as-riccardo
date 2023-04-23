@@ -1,10 +1,12 @@
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
-  name: discord-bot-acts-as-riccardo
-#  name: cloud-run-service-name # this service will be created in Cloud Run via Skaffold
+  name: discord-bot-acts-as-riccardo-service
 spec:
   template:
     spec:
       containers:
-      - image: gcr.io/cloudrun/hello
+#      - image: gcr.io/cloudrun/hello
+      - image: discord-bot-acts-as-riccardo-skimage
+
+# Consenti chiamate non autenticate

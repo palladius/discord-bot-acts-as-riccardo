@@ -1,12 +1,33 @@
-apiVersion: skaffold/v4beta2
+apiVersion: skaffold/v4beta1
 kind: Config
+metadata:
+  name: discord-bot-acts-as-riccardo # -skimage
 
 manifests:
   rawYaml:
     - deploy/*
 
+build:
+  artifacts:
+  - image: discord-bot-acts-as-riccardo-skbp # skaffold-buildpacks
+    buildpacks:
+      builder: "gcr.io/buildpacks/builder:v1"
+      env:
+      - DESCRIPTION='Trying to build with Skaffold and BP '
+      dependencies:
+        paths:
+        - lib/**
+#         # - src/*.go
+#         # ignore:
+#         # - vendor/**
+#       # local: {}
+
 deploy:
   cloudrun:
-    projectid: YOUR-GCP-PROJECT
-    #projectid: vulcanina
+    #projectid: YOUR-GCP-PROJECT
+    projectid: vulcanina
     region: europe-west1
+
+## ===> BUILDING
+#[builder] === Ruby - Missing Entrypoint (google.ruby.missing-entrypoint@0.0.1) ===
+#[builder] Failure: (ID: 052f1e5c) Failed to run /bin/build: for Ruby, an entrypoint must be manually set, either with "GOOGLE_ENTRYPOINT" env var or by creating a "Procfile" file
