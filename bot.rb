@@ -8,6 +8,11 @@ require 'socket'
 TOKEN = ENV['TOKEN'] or 'NonDatur'
 ChannelID = ENV['SERVER_ID']
 
+raise "ENV['SERVER_ID'] is null. Please provide proper ENV vars!" unless ENV['SERVER_ID']
+raise "ENV['TOKEN'] is null. Please provide proper ENV vars!" unless ENV['TOKEN']
+raise "ENV['CLIENT_ID'] is null. Please provide proper ENV vars!" unless ENV['CLIENT_ID']
+
+
 
 Bot = Discordrb::Commands::CommandBot.new(
   token: ENV['TOKEN'],

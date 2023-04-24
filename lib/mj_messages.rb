@@ -5,7 +5,10 @@ EnvPeopleWebsites = ENV.fetch('PEOPLE_PERSONAL_WEBSITES', '')
 
 def getPeopleWebsites()
     peopleWebsites = EnvPeopleWebsites.split("\n")
-    raise "Malformed variable, should be a multiline starting with 'ArrayOf:' and then have a NAME and URL with triple ::: separator. Instead this is what I see: #{peopleWebsites}" unless peopleWebsites[0] == "ArrayOf:"
+    unless peopleWebsites[0] == "ArrayOf:"
+      puts  "ERROR Malformed variable, should be a multiline starting with 'ArrayOf:' and then have a NAME and URL with triple ::: separator. Instead this is what I see: #{peopleWebsites}"
+      return []
+    end
     peopleWebsites.shift() # remove the first
     peopleWebsites.map{|line|
         line.split(':::').map{|element| element.strip.chomp }
@@ -21,7 +24,6 @@ end
 
   Bot.message(with_text: 'mj_urls') do |event|
     getPeopleWebsites.each do |person, url|
-        #url = :boh
         bot_event_respond event, "Private MJ page of **#{person}** 🌍 #{url}"
     end
   end
