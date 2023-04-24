@@ -8,12 +8,12 @@ Bot.message(content: 'hello' ) do |event|
 end
 
 
-Bot.message(with_text: 'Ping!') do |event|
-  bot_event_respond event, '🤖 Pong! Code: #{$bot_code_url}'
+Bot.message(with_text: /ping/i) do |event|
+  bot_event_respond event, "Pong! Code: #{$bot_code_url}"
   end
 
   Bot.message(with_text: /ciao/i ) do |event|
-    bot_event_respond event, '🤖 🇮🇹 ciao a te dal Ric Bot su GProjects. I was created to cache/remember MidJourney jobs when Ricc had finished'
+    bot_event_respond event, "Ciao a te dal Ric Bot su GProjects su ***#{$hostname}***. I was created to cache/remember MidJourney jobs when Ricc had finished his FAST generation GPUs."
   end
 
   Bot.message(with_text: 'aiuto') do |event|
