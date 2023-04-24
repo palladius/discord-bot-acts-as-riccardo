@@ -48,7 +48,7 @@ module DiscordDB
         puts "$db URL: #{mysql_url}"
         $db ||= Sequel.connect(mysql_url)
         if $db.is_a?(Sequel::Database)
-            puts green("$db found: #{$db.methods}")
+            puts green("$db found (type: #{$db.class})")
 
             #puts mysql2("SELECT * FROM #{TableName}")
             items = $db[TableName.to_sym]

@@ -17,6 +17,9 @@ build:
       dependencies:
         paths:
         - lib/**
+        - *.rb
+        - config.ru
+        - Rakefile
 #         # - src/*.go
 #         # ignore:
 #         # - vendor/**
@@ -25,7 +28,7 @@ build:
 deploy:
   cloudrun:
     #projectid: YOUR-GCP-PROJECT
-    projectid: vulcanina
+    projectid: vulcanina # take from ENV[PROJECT_ID]
     region: europe-west1
 
 ## ===> BUILDING
