@@ -4,7 +4,7 @@
 
 Sequel.migration do
     up do
-        puts "Migrating the REAL table :discord_messages .."
+        puts "2. Migrating the REAL table :discord_messages .."
         create_table(:discord_messages) do
             primary_key :id
             String :command, null: false
