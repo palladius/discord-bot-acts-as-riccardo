@@ -4,12 +4,13 @@
 ################################################
 # Application id + public key
 ################################################
-export APPLICATION_ID='1010101010101010101'
+#export APPLICATION_ID='1010101010101010101'
+export CLIENT_ID='1010101010101010101'
 export PUBLIC_KEY='abcdefghijklmnopqrstuvz1234567890abcdefghijklmnopqrstuvz12345678'
 
 
 # under Bot
-export BOT_TOKEN="12345678901230912384049463.G12345.i1235426354523176455472654723654762344"
+export TOKEN="12345678901230912384049463.G12345.i1235426354523176455472654723654762344"
 # https://discord.com/developers/applications/1097532911022002216/oauth2/url-generator
 
 ################################################
@@ -31,3 +32,9 @@ BazSemp ::: https://www.midjourney.com/app/users/abcdef12-1234-5678-4177-1234567
 
 # for your /memento command to write to DB :)
 export DATABASE_URL='mysql2://your-username:your-password@localhost:3306/your-db-name'
+
+
+
+# GCP on Cloud Run
+export PROJECT_ID=your-project-id
+export GCP_REGION=us-central1

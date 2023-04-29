@@ -10,11 +10,10 @@ set -u
 
 direnv allow
 
-export REGION='us-central1'
+#export REGION="$GCP_REGION"
 
 # since docker doesnt work with this
 cp .envrc.private .envrc.private.copynosymlink
-
 
 if docker images | grep discord-bot-docker | grep "v$VERSION" ; then
     echo '🟨 no need to rebuild or repush'
@@ -23,16 +22,23 @@ else
     echo gcloud auth configure-docker
     echodo docker push "gcr.io/$PROJECT_ID/discord-bot-docker:v$VERSION"
 fi
-echo "🌱 PROJECT_ID: $PROJECT_ID"
-echo "🌱VERSION: $VERSION"
-echo "🌱APPLICATION_ID=$APPLICATION_ID"
-echo "S🌱ERVER_ID=$SERVER_ID"
-echo "🌱DATABASE_URL=$DATABASE_URL,SERVER_ID=$SERVER_ID"
+
+ bin/show-needed-envs.sh
+
+# echo "🌱 PROJECT_ID: $PROJECT_ID"
+# echo "🌱 VERSION: $VERSION"
+# #echo "🌱 APPLICATION_ID=$APPLICATION_ID"
+# echo "🌱 SERVER_ID=$SERVER_ID"
+# echo "🌱 CLIENT_ID=$CLIENT_ID"
+# echo "🌱 DATABASE_URL=$DATABASE_URL,SERVER_ID=$SERVER_ID"
+# echo "🌱 TOKEN=$TOKEN"
 
 echodo gcloud --project "$PROJECT_ID" run deploy discord-bot-docker \
     --image gcr.io/"$PROJECT_ID"/discord-bot-docker:v$VERSION \
-    --update-env-vars "APPLICATION_ID=$APPLICATION_ID,SERVER_ID=$SERVER_ID,DATABASE_URL=$DATABASE_URL" \
-    --region "$REGION" \
+    --update-env-vars "CLIENT_ID=$CLIENT_ID,SERVER_ID=$SERVER_ID,SERVER_NAME=$SERVER_NAME,TOKEN=$TOKEN" \
+    --update-env-vars "DATABASE_URL=$DATABASE_URL" \
+    --update-env-vars "PEOPLE_PERSONAL_WEBSITES=$PEOPLE_PERSONAL_WEBSITES" \
+    --region "$GCP_REGION" \
     --allow-unauthenticated \
     --platform managed
 

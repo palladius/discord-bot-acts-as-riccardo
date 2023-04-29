@@ -14,6 +14,8 @@ COPY .envrc .envrc.private.dist .envrc.private.sanitized .
 # Copy the symlinked in Ricc Repo as if it was Antani
 COPY .envrc.private.copynosymlink  .envrc.private
 COPY lib/ lib/
+RUN mkdir bin/
+COPY bin/* ./bin/
 
 #CMD ["bundle", "exec", "ruby", "bot.rb"]
 #CMD ["ruby", "bot.rb"]
