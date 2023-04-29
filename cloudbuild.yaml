@@ -1,0 +1,7 @@
+# TODO variables..
+# $PROJECT_ID = vulcanina
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'us-central1-docker.pkg.dev/vulcanina/discord-bot/quickstart-image:cbtag', '.' ]
+images:
+- 'us-central1-docker.pkg.dev/$PROJECT_ID/discord-bot/quickstart-image:cbtag'

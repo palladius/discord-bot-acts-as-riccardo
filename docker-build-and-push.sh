@@ -10,6 +10,8 @@ set -u
 
 direnv allow
 
+ARTIFACT_REPO_URL="us-central1-docker.pkg.dev/vulcanina/discord-bot"
+
 #export REGION="$GCP_REGION"
 
 # since docker doesnt work with this
@@ -18,9 +20,11 @@ cp .envrc.private .envrc.private.copynosymlink
 if docker images | grep discord-bot-docker | grep "v$VERSION" ; then
     echo '🟨 no need to rebuild or repush'
 else
-    echodo docker build -t gcr.io/"$PROJECT_ID"/discord-bot-docker:v$VERSION .
+#    echodo docker build -t gcr.io/"$PROJECT_ID"/discord-bot-docker:v$VERSION .
+    echodo docker build -t $ARTIFACT_REPO_URL/discord-bot-docker:v$VERSION .
     echo gcloud auth configure-docker
-    echodo docker push "gcr.io/$PROJECT_ID/discord-bot-docker:v$VERSION"
+#    echodo docker push "gcr.io/$PROJECT_ID/discord-bot-docker:v$VERSION"
+    echodo docker push $ARTIFACT_REPO_URL/discord-bot-docker:v$VERSION
 fi
 
  bin/show-needed-envs.sh
@@ -34,7 +38,7 @@ fi
 # echo "🌱 TOKEN=$TOKEN"
 
 echodo gcloud --project "$PROJECT_ID" run deploy discord-bot-docker \
-    --image gcr.io/"$PROJECT_ID"/discord-bot-docker:v$VERSION \
+    --image $ARTIFACT_REPO_URL/discord-bot-docker:v$VERSION \
     --update-env-vars "CLIENT_ID=$CLIENT_ID,SERVER_ID=$SERVER_ID,SERVER_NAME=$SERVER_NAME,TOKEN=$TOKEN" \
     --update-env-vars "DATABASE_URL=$DATABASE_URL" \
     --update-env-vars "PEOPLE_PERSONAL_WEBSITES=$PEOPLE_PERSONAL_WEBSITES" \

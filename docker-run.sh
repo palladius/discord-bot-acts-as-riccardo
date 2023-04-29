@@ -7,6 +7,9 @@ VERSION=${2:-$DEFAULT_VERSION}
 set -e
 set -u
 
+export ARTIFACT_REPO_URL="us-central1-docker.pkg.dev/$PROJECT_ID/discord-bot"
+
+
 if docker images | grep discord-bot-docker | grep "v$VERSION" ; then
     echo '🟨 no need to rebuild or repush'
 else
@@ -20,5 +23,5 @@ bin/show-needed-envs.sh
 
 
 #docker run -it  gcr.io/"$PROJECT_ID"/discord-bot-docker:v$VERSION bash
-docker run -it --env-file .envrc.private.sanitized gcr.io/"$PROJECT_ID"/discord-bot-docker:v$VERSION
+docker run -it --env-file .envrc.private.sanitized $ARTIFACT_REPO_URL/discord-bot-docker:v$VERSION
 #docker run -it --env-file .envrc.private.sanitized gcr.io/"$PROJECT_ID"/discord-bot-docker:v$VERSION bash
