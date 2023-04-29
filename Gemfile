@@ -1,13 +1,17 @@
 
  source "https://rubygems.org"
 
-gem 'discordrb'
+gem 'discordrb', '3.4.0'
 # For MySQL
 gem 'sequel'
+# to fix this horrible ENV stuff..
+gem 'dotenv'
 
+################################################################################
 # to run via buildpacks: https://docs.cloudfoundry.org/buildpacks/ruby/ruby-tips.html
 gem 'rack'
 gem 'ocra' # to bundle ruby
+################################################################################
 
 ############################
 # Possible Databases

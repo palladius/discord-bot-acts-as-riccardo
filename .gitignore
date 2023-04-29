@@ -6,3 +6,4 @@ t.sh
 servers.json
 .envrc.private2
 .envrc.private.sanitized
+.envrc.private.copynosymlink

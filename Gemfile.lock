@@ -11,6 +11,7 @@ GEM
       rest-client (>= 2.1.0.rc1)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.8.1)
     event_emitter (0.2.6)
     ffi (1.15.5)
     http-accept (1.7.0)
@@ -31,7 +32,6 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     sequel (5.67.0)
-    sqlite3 (1.6.2-arm64-darwin)
     sqlite3 (1.6.2-x86_64-linux)
     unf (0.1.4)
       unf_ext
@@ -46,7 +46,8 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  discordrb
+  discordrb (= 3.4.0)
+  dotenv
   mysql2
   ocra
   rack

@@ -12,6 +12,10 @@ direnv allow
 
 export REGION='us-central1'
 
+# since docker doesnt work with this
+cp .envrc.private .envrc.private.copynosymlink
+
+
 if docker images | grep discord-bot-docker | grep "v$VERSION" ; then
     echo '🟨 no need to rebuild or repush'
 else

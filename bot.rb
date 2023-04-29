@@ -33,4 +33,7 @@ db_init()
 #puts get_commands()
 #exit 43
 
+puts "🟨 Now runing the bot.."
 Bot.run()
+
+puts "💔 This should never happen"
