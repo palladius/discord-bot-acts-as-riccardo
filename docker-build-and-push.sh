@@ -1,15 +1,37 @@
 #!/bin/bash
 
 PROJECT_ID=${1:-vulcanina}
-VERSION=${2:-1.1}
+DEFAULT_VERSION="$(cat VERSION)"
+VERSION=${2:-$DEFAULT_VERSION}
 
-set -x
+#set -x
+set -e
+set -u
 
-docker build -t gcr.io/"$PROJECT_ID"/discord-bot-docker:v$VERSION .
+direnv allow
 
-#docker push gcr.io/"$PROJECT_ID"/discord-bot-docker:v$VERSION
-gcloud run deploy discord-bot-docker --image gcr.io/"$PROJECT_ID"/discord-bot-docker:v$VERSION --platform managed
+export REGION='us-central1'
 
-echo Try:
-#cat .envrc.private | sed -e 's/export //' | sed -e 's/"//g' > .envrc.private.sanitized
-#docker run -it --env-file .envrc.private.sanitized gcr.io/"$PROJECT_ID"/discord-bot-docker:v$VERSION
+if docker images | grep discord-bot-docker | grep "v$VERSION" ; then
+    echo '🟨 no need to rebuild or repush'
+else
+    echodo docker build -t gcr.io/"$PROJECT_ID"/discord-bot-docker:v$VERSION .
+    echo gcloud auth configure-docker
+    echodo docker push "gcr.io/$PROJECT_ID/discord-bot-docker:v$VERSION"
+fi
+echo "🌱 PROJECT_ID: $PROJECT_ID"
+echo "🌱VERSION: $VERSION"
+echo "🌱APPLICATION_ID=$APPLICATION_ID"
+echo "S🌱ERVER_ID=$SERVER_ID"
+echo "🌱DATABASE_URL=$DATABASE_URL,SERVER_ID=$SERVER_ID"
+
+echodo gcloud --project "$PROJECT_ID" run deploy discord-bot-docker \
+    --image gcr.io/"$PROJECT_ID"/discord-bot-docker:v$VERSION \
+    --update-env-vars "APPLICATION_ID=$APPLICATION_ID,SERVER_ID=$SERVER_ID,DATABASE_URL=$DATABASE_URL" \
+    --region "$REGION" \
+    --allow-unauthenticated \
+    --platform managed
+
+echo Try: now:
+
+# locally: docker run -it -p 8087:8080 --env-file ~/git/discord-bot-acts-as-riccardo/.envrc.private gcr.io/vulcanina/discord-bot-docker:v1.1

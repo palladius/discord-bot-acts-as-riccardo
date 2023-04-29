@@ -6,7 +6,7 @@ EnvPeopleWebsites = ENV.fetch('PEOPLE_PERSONAL_WEBSITES', '')
 def getPeopleWebsites()
     peopleWebsites = EnvPeopleWebsites.split("\n")
     unless peopleWebsites[0] == "ArrayOf:"
-      puts  "ERROR Malformed variable, should be a multiline starting with 'ArrayOf:' and then have a NAME and URL with triple ::: separator. Instead this is what I see: #{peopleWebsites}"
+      puts  "[WARN] getPeopleWebsites() Malformed variable, should be a multiline starting with 'ArrayOf:' and then have a NAME and URL with triple ::: separator. Instead this is what I see: #{peopleWebsites}"
       return []
     end
     peopleWebsites.shift() # remove the first
