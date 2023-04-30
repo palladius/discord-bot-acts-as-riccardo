@@ -44,7 +44,7 @@ echodo gcloud --project "$PROJECT_ID" run deploy discord-bot-docker \
     --update-env-vars "PEOPLE_PERSONAL_WEBSITES=$PEOPLE_PERSONAL_WEBSITES" \
     --region "$GCP_REGION" \
     --allow-unauthenticated \
-    --platform managed
+    --platform 'managed'
 
 echo Try: now:
 
