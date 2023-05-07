@@ -88,19 +88,19 @@ module Ping
     ret = []
     ret << "Event.class: **#{event.class}**. Docs: http://discordrb.github.io/discordrb/master/Discordrb/Commands/CommandEvent.html"
     ret << "ARGS you gave me: **#{args.join(' ')}**"
-    ret << "Event you gave me: **#{event}** (#{event.class})" 
+    ret << "Event you gave me: **#{event}** (#{event.class})"
     # https://www.rubydoc.info/github/meew0/discordrb/Discordrb/Channel
     ret << "Channel.name: **#{event.channel.name}**."
     ret << "content: **#{event.content}**."
     ret << "server.name /id : *#{event.server.name}* (**#{event.server.id}**)"
     ret << "user : **#{event.user.name}** (*#{event.user.id}*)"
 #    (Discordrb::Commands::CommandEvent). Methods: [:bot, :command=, :command, :server, :saved_message, :author, :file_spoiler, :text, :attach_file, :detach_file, :message, :from_bot?, :filename, :file, :send_file, :voice, :channel, :timestamp, :content, :user, :send_temporary_message, :drain_into, :respond, :send, :send_temp, :send_message, :<<, :send_embed, :drain, :to_yaml, :cleanup_table_oneoff, :db_write_discord_messages, :db_get_discord_messages, :db_init, :db_puts, :to_json, :hash, :singleton_class, :dup, :itself, :methods, :singleton_methods, :protected_methods, :private_methods, :public_methods, :instance_variables, :instance_variable_get, :instance_variable_set, :instance_variable_defined?, :remove_instance_variable, :instance_of?, :kind_of?, :is_a?, :display, :public_send, :extend, :clone, :<=>, :class, :===, :!~, :tap, :then, :frozen?, :nil?, :eql?, :respond_to?, :method, :public_method, :singleton_method, :define_singleton_method, :freeze, :inspect, :object_id, :yield_self, :to_s, :to_enum, :enum_for, :gem, :!, :equal?, :send, :id, :==, :!=, :instance_eval, :instance_exec]
-    #for methods in 
-    %w{ content message user inspect }.each do |my_method| 
+    #for methods in
+    %w{ content message user inspect }.each do |my_method|
       ret <<  "Event.my_method(#{my_method}, #{my_method.class}) => #{event.send(my_method.to_sym) rescue  "Error(#{my_method}): '#{$!}'" }"
       #ret <<  "Event.my_method(#{my_method}, #{my_method.class}) => #{event.send(my_method.to_s) rescue  "Error(#{my_method}): '#{$!}'" }"
       #event.send(my_method.to_sym)
-    end if verbose 
+    end if verbose
     # verbose stuff ..
     if (verbose)
       ret << "Other channels: *#{event.server.channels.map{|c| c.name}}*"
@@ -109,11 +109,11 @@ module Ping
     ret.join("\n`[DEB]` ")[0,2000] # max 2k char..
   end
 
-  # record on mysql a template you can then recall :) 
+  # record on mysql a template you can then recall :)
   Bot.command :mjt do |event, *args|    # too hard to get args here...
     #bot_event_respond event, "Naah... use /mjt instead"
     # verify Arguments
-    if args.size == 0 
+    if args.size == 0
       return bot_event_respond( event, '/mjt: Wrong size. TODO(ricc): expose possible keys')
     end
     if args.size == 1
@@ -124,7 +124,7 @@ module Ping
     template_name = args.shift # [0]
     template_description = args.join(' ')
     bot_event_respond event, "/mjt: WRITING on MYSQL Template: **#{template_name}** -> ''*#{template_description}*''"
-    # TODO mysql write this
+    mjt_write_message(template_name, template_description)
   end
 
 
