@@ -28,11 +28,19 @@ module DiscordDB
         puts(azure("db_write_discord_messages.insert(#{hash})")) if $debugSQLMessages
         items.insert(hash)
     end
+    def mjt_cleanup_oneoff()
+        sql = "DELETE FROM #{TableName} where channel_name='_mjt_write' OR topic='db_test';"
+        puts(azure("mjt_cleanup_oneoff(). sql=#{sql}")) if $debugSQLMessages
+        $db.run(sql) if $db
+    end
 
     def mjt_write_message(title, description)
         h = {}
+        # le due chiavi primarie
         h[:topic] = title
-        h[:channel_name] = '_mjt_write_'
+        h[:channel_name] = '_mjt_write' # questa e l'unica COSTANTE da non cmabiare mai :)
+        puts(azure("mjt_write_message(). topic=(#{title}) channel_name='#{ h[:channel_name]}'")) if $debugSQLMessages
+
         h[:command] = description
         h[:internal_description] = 'testing MJT write v??'
         db_write_discord_messages(h)
@@ -60,7 +68,7 @@ module DiscordDB
 
         puts row if opts_verbose
         host = row[:hostname].split('.').first rescue '?'
-        puts "#{row[:when]} #{row[:username]}@#{host} [#{row[:topic]}] #{row[:command]}"
+        puts "#{row[:when]} #{row[:username]}@#{host} [#{row[:topic]}] {ch=#{row[:channel_name]}} #{row[:command]}"
     end
 
     def db_print_all_messages(opts={})

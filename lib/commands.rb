@@ -117,11 +117,11 @@ module Ping
       return bot_event_respond( event, '/mjt: Wrong size. TODO(ricc): expose possible keys')
     end
     if args.size == 1
-      return bot_event_respond( event, "/mjt: Only one key . TODO(ricc): GET template(id=**#{args[0]}**) ")
+      return bot_event_respond( event, "/mjt: Only one key . TODO(ricc): GET template(id=**#{args[0]}**) Note that cuyrrently")
     end
     # more stuff :) lets write
-    bot_event_respond event, "/mjt: ARGS you gave me: **#{args.join(' ')}**. Lets write it on DB :)"
-    template_name = args.shift # [0]
+    bot_event_respond event, "/mjt: ARGS you gave me: **#{args.join(' ')}**. Lets write it on DB :) TODO(ricc): write works but should UPDATE previous element if exists.."
+    template_name = args.shift
     template_description = args.join(' ')
     bot_event_respond event, "/mjt: WRITING on MYSQL Template: **#{template_name}** -> ''*#{template_description}*''"
     mjt_write_message(template_name, template_description)
